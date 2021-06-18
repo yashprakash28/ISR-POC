@@ -1,0 +1,149 @@
+{
+    "seeSaw":
+    [
+        {
+            "question": "If one side weight is 12kg (left) and the other side is 7kg (right), how much more weight is required so as to balance the see saw and on which side?",
+            "option_1": "5kg left",
+            "option_2": "10kg left",
+            "option_3": "5kg right",
+            "option_4": "10kg right",
+            "correct": 3
+        },
+
+        {
+            "question": "If Rahul and Kabir are sitting on a see saw and f Rahul leaves then in which direction will Kabir move ?",
+            "option_1": "Insufficient information",
+            "option_2": "Will remain stationary",
+            "option_3": "Upwards",
+            "option_4": "Downwards",
+            "correct": 4
+        },
+
+        {
+            "question": "See-Saw explains which law?",
+            "option_1": "Conservation of Mass",
+            "option_2": "Conservation of Torque",
+            "option_3": "Conservation of Rotation",
+            "option_4": "Coservation of Gravity",
+            "correct": 2
+        },
+
+        {
+            "question": "What is the point called where see saw is balanced?",
+            "option_1": "Radix",
+            "option_2": "Center",
+            "option_3": "Pivot",
+            "option_4": "None of the above",
+            "correct": 3
+        },
+
+        {
+            "question": "If left side weighs 50kg and the other side is 60kg, in which direction should the pivot be moved so as to balance the see saw?",
+            "option_1": "Left",
+            "option_2": "Right",
+            "option_3": "Should be kept stationary",
+            "option_4": "Can not be determined",
+            "correct": 1
+        }
+
+    ],
+
+    "trundlewheel":
+    [
+        {
+            "question": "What does a trundle wheel measure?",
+            "option_1": "Distance",
+            "option_2": "Angle",
+            "option_3": "Volume",
+            "option_4": "Area",
+            "correct": 1
+        },
+
+        {
+            "question": "If the wheel measures 200 cm in one complete rotation, how much distance will be covered in 108 degrees?",
+            "option_1": "10 cm",
+            "option_2": "20 cm",
+            "option_3": "30 cm",
+            "option_4": "40 cm",
+            "correct": 3
+        },
+
+        {
+            "question": "Who invented the measuring wheel?",
+            "option_1": "John Metcalf",
+            "option_2": "Issac Newton",
+            "option_3": "Albert Einstein",
+            "option_4": "Archmidies",
+            "correct": 1
+        },
+
+        {
+            "question": "What is the circumference of an ideal trundle wheel?",
+            "option_1": "50 cm",
+            "option_2": "100 cm",
+            "option_3": "150 cm",
+            "option_4": "200 cm",
+            "correct": 2
+        },
+
+        {
+            "question": "If the wheel measures 1 meter in one complete rotation, what will be the angle rotated by the wheel to travel 350 cm?",
+            "option_1": "19<sup>o</sup>",
+            "option_2": "20<sup>o</sup>",
+            "option_3": "21<sup>o</sup>",
+            "option_4": "22<sup>o</sup>",
+            "correct": 4
+        }
+
+    ],
+
+    "solarlight":
+    [
+        {
+            "question": "Which sensor is used in solar security light system?",
+            "option_1": "PIR sensor",
+            "option_2": "IR sensor",
+            "option_3": "Ultrasonic Sensor",
+            "option_4": "Relay",
+            "correct": 1
+        },
+
+        {
+            "question": "In which battery does solar panel store energy?",
+            "option_1": "Li-Cd battery",
+            "option_2": "Li-Ion battery",
+            "option_3": "Hydrogen cell",
+            "option_4": "Ni-Cd battery",
+            "correct": 2
+        },
+
+        {
+            "question": "In this circuit, the principle is to convert light energy to electrical energy.",
+            "option_1": "True",
+            "option_2": "False",
+            "option_3": "Can not be determined",
+            "option_4": "Need more information",
+            "correct": 1
+        },
+
+        {
+            "question": "How much angle can the sensor sense(in degrees)?",
+            "option_1": "45",
+            "option_2": "90",
+            "option_3": "120",
+            "option_4": "180",
+            "correct": 3
+        },
+
+        {
+            "question": "If we use 5 LED in a circuit and each LED consumes 20mW of power, then how much will be the maximum power consumption?",
+            "option_1": "20mW",
+            "option_2": "4mW",
+            "option_3": "100mW",
+            "option_4": "200mW",
+            "correct": 3
+        }
+        
+    ]
+
+}
