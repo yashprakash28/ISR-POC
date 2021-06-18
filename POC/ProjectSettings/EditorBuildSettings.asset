@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuScene.unity
     guid: 20369dd72a04cc84f80b12fd6f8a8243
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: 
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Seesaw.unity
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SolarLight.unity
     guid: 4963f124895074c4184f0cd3cd71b3a6
+  - enabled: 1
+    path: Assets/Scenes/UltraSonic.unity
+    guid: 17a1d165448143e41977ce6b316f0c87
   m_configObjects: {}

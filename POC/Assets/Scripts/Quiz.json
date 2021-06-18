@@ -144,6 +144,54 @@
             "correct": 3
         }
         
+    ],
+
+    "ultrasonic":
+    [
+        {
+            "question": "Which sensor is used in solar security light system?",
+            "option_1": "PIR sensor",
+            "option_2": "IR sensor",
+            "option_3": "Ultrasonic Sensor",
+            "option_4": "Relay",
+            "correct": 1
+        },
+
+        {
+            "question": "In which battery does solar panel store energy?",
+            "option_1": "Li-Cd battery",
+            "option_2": "Li-Ion battery",
+            "option_3": "Hydrogen cell",
+            "option_4": "Ni-Cd battery",
+            "correct": 2
+        },
+
+        {
+            "question": "In this circuit, the principle is to convert light energy to electrical energy.",
+            "option_1": "True",
+            "option_2": "False",
+            "option_3": "Can not be determined",
+            "option_4": "Need more information",
+            "correct": 1
+        },
+
+        {
+            "question": "How much angle can the sensor sense(in degrees)?",
+            "option_1": "45",
+            "option_2": "90",
+            "option_3": "120",
+            "option_4": "180",
+            "correct": 3
+        },
+
+        {
+            "question": "If we use 5 LED in a circuit and each LED consumes 20mW of power, then how much will be the maximum power consumption?",
+            "option_1": "20mW",
+            "option_2": "4mW",
+            "option_3": "100mW",
+            "option_4": "200mW",
+            "correct": 3
+        }
     ]
 
 }

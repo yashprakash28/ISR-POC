@@ -37,6 +37,7 @@ public class quiz : MonoBehaviour
         public quizData[] seeSaw;
         public quizData[] trundlewheel;
         public quizData[] solarlight;
+        public quizData[] ultrasonic;
     }
 
     quizDatas quizDatasInJson;
@@ -51,7 +52,7 @@ public class quiz : MonoBehaviour
 
         quizCanvas.GetComponent<AudioSource>().enabled = false;
 
-        switch (topic)
+        switch (topic.ToLower())
         {
             case "seesaw": quizCanvas.transform.Find("ParentPanel").Find("QuestionDisplay").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.seeSaw[CurrentQuestionIndex].question;
 
@@ -77,6 +78,15 @@ public class quiz : MonoBehaviour
                             quizCanvas.transform.Find("ParentPanel").Find("2").Find("OptionText2").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.solarlight[CurrentQuestionIndex].option_2;
                             quizCanvas.transform.Find("ParentPanel").Find("3").Find("OptionText3").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.solarlight[CurrentQuestionIndex].option_3;
                             quizCanvas.transform.Find("ParentPanel").Find("4").Find("OptionText4").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.solarlight[CurrentQuestionIndex].option_4;
+
+                            break;
+
+            case "ultrasonic" : quizCanvas.transform.Find("ParentPanel").Find("QuestionDisplay").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.ultrasonic[CurrentQuestionIndex].question;
+
+                            quizCanvas.transform.Find("ParentPanel").Find("1").Find("OptionText1").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.ultrasonic[CurrentQuestionIndex].option_1;
+                            quizCanvas.transform.Find("ParentPanel").Find("2").Find("OptionText2").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.ultrasonic[CurrentQuestionIndex].option_2;
+                            quizCanvas.transform.Find("ParentPanel").Find("3").Find("OptionText3").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.ultrasonic[CurrentQuestionIndex].option_3;
+                            quizCanvas.transform.Find("ParentPanel").Find("4").Find("OptionText4").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.ultrasonic[CurrentQuestionIndex].option_4;
 
                             break;
             
@@ -122,6 +132,17 @@ public class quiz : MonoBehaviour
                                                     quizData.correct  );
                                     }
                                     break;
+            
+            case "ultrasonic" : foreach (quizData quizData in quizDatasInJson.ultrasonic)
+                                    {
+                                        Debug.Log(  quizData.question + " " + 
+                                                    quizData.option_1 + " " +
+                                                    quizData.option_2 + " " +
+                                                    quizData.option_3 + " " +
+                                                    quizData.option_4 + " " +
+                                                    quizData.correct  );
+                                    }
+                                    break;
 
             default: Debug.Log("no data");
                     break;
@@ -155,6 +176,16 @@ public class quiz : MonoBehaviour
                                     break;
 
             case "solarlight" : if(ButtonClickedName == quizDatasInJson.solarlight[CurrentQuestionIndex].correct.ToString()) 
+                            {
+                                StartCoroutine(ShowNextQuestion());
+                            }
+                            else
+                            {
+                                StartCoroutine(ShowRedAlert());
+                            }
+                            break;
+            
+            case "ultrasonic" : if(ButtonClickedName == quizDatasInJson.ultrasonic[CurrentQuestionIndex].correct.ToString()) 
                             {
                                 StartCoroutine(ShowNextQuestion());
                             }
@@ -324,7 +355,7 @@ public class quiz : MonoBehaviour
 
                                     else
                                     {
-                                        quizCanvas.transform.Find("ParentPanel").Find("QuestionDisplay").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.seeSaw[CurrentQuestionIndex].question;
+                                        quizCanvas.transform.Find("ParentPanel").Find("QuestionDisplay").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.solarlight[CurrentQuestionIndex].question;
 
                                         // display text options
                                         quizCanvas.transform.Find("ParentPanel").Find("1").Find("OptionText1").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.solarlight[CurrentQuestionIndex].option_1;
@@ -345,6 +376,62 @@ public class quiz : MonoBehaviour
                                     quizCanvas.transform.Find("ParentPanel").Find("2").Find("OptionText2").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.solarlight[CurrentQuestionIndex].option_2;
                                     quizCanvas.transform.Find("ParentPanel").Find("3").Find("OptionText3").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.solarlight[CurrentQuestionIndex].option_3;
                                     quizCanvas.transform.Find("ParentPanel").Find("4").Find("OptionText4").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.solarlight[CurrentQuestionIndex].option_4;
+                                }
+                            }
+                            else
+                            {
+                                StartCoroutine(proceedTextDisplay());
+                            }
+                            break;
+            
+            case "ultrasonic" : if(CurrentQuestionIndex < quizDatasInJson.ultrasonic.Length)
+                            {
+                                // Image optionButton (if the user has a question with options as images)
+                                if (imageQuestion == true)
+                                {
+                                    // run image if-else block
+                                    if(CurrentQuestionIndex == quizDatasInJson.ultrasonic.Length-1)
+                                    {
+                                        // Update Question
+                                        quizCanvas.transform.Find("ParentPanel").Find("QuestionDisplay").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.ultrasonic[CurrentQuestionIndex].question;
+
+                                        // Update all the options as null text
+                                        for(int i=1;i<=4;i++)
+                                        {
+                                            quizCanvas.transform.Find("ParentPanel").Find(i.ToString()).Find("OptionText" + i.ToString()).GetComponent<TextMeshProUGUI>().text = "";
+                                        }
+
+                                        // display images
+                                        Debug.Log("Images");
+                                        quizCanvas.transform.Find("ParentPanel").Find("1").GetComponent<Image>().sprite = Resources.Load<Sprite>("CircuitImages/" + quizDatasInJson.ultrasonic[CurrentQuestionIndex].option_1);
+                                        quizCanvas.transform.Find("ParentPanel").Find("2").GetComponent<Image>().sprite = Resources.Load<Sprite>("CircuitImages/" + quizDatasInJson.ultrasonic[CurrentQuestionIndex].option_2);
+                                        quizCanvas.transform.Find("ParentPanel").Find("3").GetComponent<Image>().sprite = Resources.Load<Sprite>("CircuitImages/" + quizDatasInJson.ultrasonic[CurrentQuestionIndex].option_3);
+                                        quizCanvas.transform.Find("ParentPanel").Find("4").GetComponent<Image>().sprite = Resources.Load<Sprite>("CircuitImages/" + quizDatasInJson.ultrasonic[CurrentQuestionIndex].option_4);
+                                    }
+
+                                    else
+                                    {
+                                        quizCanvas.transform.Find("ParentPanel").Find("QuestionDisplay").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.ultrasonic[CurrentQuestionIndex].question;
+
+                                        // display text options
+                                        quizCanvas.transform.Find("ParentPanel").Find("1").Find("OptionText1").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.ultrasonic[CurrentQuestionIndex].option_1;
+                                        quizCanvas.transform.Find("ParentPanel").Find("2").Find("OptionText2").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.ultrasonic[CurrentQuestionIndex].option_2;
+                                        quizCanvas.transform.Find("ParentPanel").Find("3").Find("OptionText3").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.ultrasonic[CurrentQuestionIndex].option_3;
+                                        quizCanvas.transform.Find("ParentPanel").Find("4").Find("OptionText4").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.ultrasonic[CurrentQuestionIndex].option_4;
+
+                                    } 
+                                }
+
+                                // if there is no image as an option // run simple block
+                                else
+                                {
+                                    quizCanvas.transform.Find("ParentPanel").Find("QuestionDisplay").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.ultrasonic[CurrentQuestionIndex].question;
+
+                                    // display text options
+                                    quizCanvas.transform.Find("ParentPanel").Find("1").Find("OptionText1").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.ultrasonic[CurrentQuestionIndex].option_1;
+                                    quizCanvas.transform.Find("ParentPanel").Find("2").Find("OptionText2").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.ultrasonic[CurrentQuestionIndex].option_2;
+                                    quizCanvas.transform.Find("ParentPanel").Find("3").Find("OptionText3").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.ultrasonic[CurrentQuestionIndex].option_3;
+                                    quizCanvas.transform.Find("ParentPanel").Find("4").Find("OptionText4").GetComponent<TextMeshProUGUI>().text = quizDatasInJson.ultrasonic[CurrentQuestionIndex].option_4;
                                 }
                             }
                             else
