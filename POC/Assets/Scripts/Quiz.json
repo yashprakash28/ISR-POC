@@ -149,48 +149,39 @@
     "ultrasonic":
     [
         {
-            "question": "Which sensor is used in solar security light system?",
-            "option_1": "PIR sensor",
-            "option_2": "IR sensor",
-            "option_3": "Ultrasonic Sensor",
-            "option_4": "Relay",
-            "correct": 1
-        },
-
-        {
-            "question": "In which battery does solar panel store energy?",
-            "option_1": "Li-Cd battery",
-            "option_2": "Li-Ion battery",
-            "option_3": "Hydrogen cell",
-            "option_4": "Ni-Cd battery",
+            "question": "What does ultrasonic sensor measure?",
+            "option_1": "Time",
+            "option_2": "Distance",
+            "option_3": "Speed",
+            "option_4": "Torque",
             "correct": 2
         },
 
         {
-            "question": "In this circuit, the principle is to convert light energy to electrical energy.",
+            "question": "Ultrasonic sound travels faster than the audible sound?",
             "option_1": "True",
             "option_2": "False",
-            "option_3": "Can not be determined",
-            "option_4": "Need more information",
+            "option_3": "Maybe",
+            "option_4": "Don't know",
             "correct": 1
         },
 
         {
-            "question": "How much angle can the sensor sense(in degrees)?",
-            "option_1": "45",
-            "option_2": "90",
-            "option_3": "120",
-            "option_4": "180",
-            "correct": 3
+            "question": "Which is the input pin in the sensor?",
+            "option_1": "Trig",
+            "option_2": "Echo",
+            "option_3": "Input",
+            "option_4": "Output",
+            "correct": 1
         },
 
         {
-            "question": "If we use 5 LED in a circuit and each LED consumes 20mW of power, then how much will be the maximum power consumption?",
-            "option_1": "20mW",
-            "option_2": "4mW",
-            "option_3": "100mW",
-            "option_4": "200mW",
-            "correct": 3
+            "question": "Which is the output pin ?",
+            "option_1": "Trig",
+            "option_2": "Echo",
+            "option_3": "Input",
+            "option_4": "Output",
+            "correct": 2
         }
     ]
 

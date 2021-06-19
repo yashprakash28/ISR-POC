@@ -77,4 +77,5 @@ public class ButtonInfo : MonoBehaviour
 
         Flage = !Flage;
     }
+
 }
