@@ -9,7 +9,7 @@ public class ComponentAssembly : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     private GameObject AssemblyTable;
-    [SerializeField]
+    // [SerializeField]
     private GameObject Obj;
 
     [SerializeField]
@@ -37,6 +37,7 @@ public class ComponentAssembly : MonoBehaviour
     {
         if (collision.gameObject.tag == "Component")
         {
+            Debug.Log("chal raha hai");
             collision.gameObject.SetActive(false);
             Obj.transform.Find(collision.gameObject.name).transform.gameObject.SetActive(true);
             count++;
