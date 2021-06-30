@@ -94,7 +94,6 @@ public class FirebaseManager : MonoBehaviour
         AuthStateChanged(this, null);
 
         DBreference = FirebaseDatabase.DefaultInstance.RootReference;
-        // DBreference = FirebaseDatabase.GetInstance("https://qbitproject-65dcb-default-rtdb.firebaseio.com");//DefaultInstance.RootReference;
         Debug.Log(DBreference);
     }
 
@@ -517,6 +516,7 @@ public class FirebaseManager : MonoBehaviour
             Debug.Log(snapshot.Child("username"));
             Debug.Log(snapshot.Child("email"));
             Debug.Log(snapshot.Child("password"));
+            Debug.Log("Data retreived");
         }
     }
 

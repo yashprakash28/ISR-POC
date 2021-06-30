@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WatsonSettingsUltrasonic
   m_EditorClassIdentifier: 
   Assistant_apikey: 5SFFuQAE6zU4uyT06O-Pajn3dvXoDk2Qqqv4bje8firl
-  serviceUrl: https://api.eu-gb.assistant.watson.cloud.ibm.com/instances/23ab6b7d-8b20-4e47-93cf-7d74330167c5
+  serviceUrl: https://api.eu-gb.assistant.watson.cloud.ibm.com/instances/23ab6b7d-8b20-4e47-93cf-7d74330167c5/v2/assistants/cff3f9c3-9de1-40db-aece-8719fd8abc76/sessions
   versionDate: 2020-09-24
   assistantId: cff3f9c3-9de1-40db-aece-8719fd8abc76
   tts_apikey: MxKL2DCO19xcpqOwvRDIpTyrF3W9GuicoW2U5Od7Yvau

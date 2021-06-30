@@ -27,7 +27,9 @@ public class SeeSawScript : MonoBehaviour
         // Mass = this.name;
         splitArray = this.name.Split(char.Parse("_"));
         Mass = float.Parse(splitArray[1]);
-        StartPos = this.transform.position;
+        StartPos = this.transform.localPosition;
+
+        Debug.Log(this.name + " --- " + StartPos);
 
     }
 
@@ -50,13 +52,14 @@ public class SeeSawScript : MonoBehaviour
             ObjectTouched.GetComponent<Rigidbody>().mass = (Mass/10);
             ObjectTouched.transform.GetChild(0).GetComponent<TextMeshPro>().text = splitArray[1] + " kg.";
             // ObjectTouched.Find("text").gameObject.GetComponent<TextMeshPro>().text = splitArray[1] + " kg.";
-            // this.transform.position = StartPos;
+            this.transform.localPosition = StartPos;
+            Debug.Log(this.name + " --- " + this.transform.localPosition);
             // Rigidbody rigidbody = other.gameObject.GetComponent<Rigidbody>();
             // Debug.Log(rigidbody.mass);
             // rigidbody.mass = 2.1f;
 
 
-            Debug.Log("I'm Touch");
+            // Debug.Log("I'm Touch");
             // Debug.Log(rigidbody.mass);
         }
     }
