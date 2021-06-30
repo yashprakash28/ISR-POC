@@ -11,11 +11,13 @@ public class UltrasonicScript : MonoBehaviour
     public static float thresholdDistance;
     private GameObject thresholdValue;
     private GameObject thresholdText;
+    public GameObject codebaseCanvas;
 
     void Start()
     {
-        thresholdValue = GameObject.Find("Canvas").transform.Find("ThresholdImage").Find("ThresholdValue").gameObject;
-        thresholdText = GameObject.Find("Canvas").transform.Find("ThresholdImage").Find("ThresholdText").gameObject;
+        // codebaseCanvas = transform.Find("CodeBaseCanvas").gameObject;
+        thresholdValue = transform.Find("CodeBaseCanvas").Find("ThresholdImage").Find("ThresholdValue").gameObject;
+        thresholdText = transform.Find("CodeBaseCanvas").Find("ThresholdImage").Find("ThresholdText").gameObject;
     }
 
     // Update is called once per frame
@@ -30,5 +32,13 @@ public class UltrasonicScript : MonoBehaviour
         string thresholdValueInput = thresholdValue.GetComponent<TMP_InputField>().text;
         thresholdDistance = float.Parse(thresholdValueInput);
         thresholdText.GetComponent<TextMeshProUGUI>().text = "Enter Threshold Distance for Sensor\nCurrent Value: " + thresholdValueInput + " units";
+        StartCoroutine(removeCodebase());
+    }
+
+    IEnumerator removeCodebase()
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        codebaseCanvas.SetActive(false);
     }
 }
