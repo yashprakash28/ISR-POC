@@ -1,4 +1,3 @@
-![ISR APP](https://user-images.githubusercontent.com/43716445/124775795-8a95f200-df5c-11eb-85e7-6373c3ae527d.png)
 # ISR-POC
 
 It aims to develop a Proof of Concept for a Leap Motion Device operated experiments for multiple age groups.
@@ -11,3 +10,4 @@ The following experiments are built:
 4. Ultrasonic Arduino
 
 ![ISR APP](https://user-images.githubusercontent.com/43716445/124775847-95508700-df5c-11eb-9ec9-5da6f166fe37.png)
+![ISRAPP2](https://user-images.githubusercontent.com/43716445/124776498-1e67be00-df5d-11eb-9cbd-c42c8596aa76.png)
